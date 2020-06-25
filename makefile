@@ -3,7 +3,9 @@ DOTVIM=~/.vim
 copy = cp -r
 
 rc:
-	$(copy) ./src/.vimrc ~/ 
+	[ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.backup
+	[ -d ~/.vim ] && mv ~/.vim ~/.vim.backup
+	$(copy) ./src/.vimrc ~/.vimrc
 
 install: rc 
 
