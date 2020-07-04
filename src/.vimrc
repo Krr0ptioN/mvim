@@ -1,7 +1,9 @@
 
-"" Plugin {
+" in {
 call plug#begin('~/.vim/plugged')
     " Initialize plugin system
+    Plug 'tomasr/molokai'
+    Plug 'fmoralesc/molokayo'
     Plug 'junegunn/vim-easy-align'
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -37,7 +39,7 @@ set clipboard+=autoselect
 set autoindent
 set relativenumber
 
-colorscheme monokai-dark
+colorscheme molokayo 
 
 " Mapping Area 
 " General keymap
