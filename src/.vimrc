@@ -8,17 +8,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'ycm-core/YouCompleteMe'
-    Plug 'codota/tabnine-vim' ,{ 'dir': '~/.vim/plugged/tabnine-vim', 'do':'./install.sh'}
+    " Plug 'codota/tabnine-vim' ,{ 'dir': '~/.vim/plugged/tabnine-vim', 'do':'./install.sh'}
     Plug 'jaredgorski/spacecamp'
     Plug 'gruvbox-community/gruvbox'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'terryma/vim-expand-region'
     Plug 'jceb/vim-orgmode'
+    Plug 'preservim/nerdcommenter'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 " }
 
 "" Looook
 filetype indent on
+filetype plugin on
+
 syntax enable
 set tabstop=4 shiftwidth=4
 set expandtab
@@ -54,9 +58,9 @@ nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR> 
-" C style coding
+" C coding
 map <F9> :make<cr>
-
+map <C-c> :qa! <cr>
 
 "" Keymap
 " Multi Cursor
@@ -69,4 +73,9 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+
+" Plugin setting
+" NerdCommenter
+let g:NERDCustomDelimiters = { 'c': { 'left': '/*','right': '*/' },'rb': { 'left': '#', 'right': '#' } }
 
